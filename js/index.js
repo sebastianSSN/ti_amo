@@ -7,7 +7,7 @@ function closePopup() {
 }
 
 function openPinterest() {
-  window.open("https://pin.it/6IgHUiqoH", "_blank");
+  window.open("https://pin.it/6X19fA2Rk", "_blank");
 }
 
 function openPlaylist() {
