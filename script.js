@@ -1,265 +1,202 @@
-let noButtonClickCount = 0; // Contador para el botón "No"
-let noButtonState = 0; // Estado actual del botón "No"
 
-// Mostrar el gif inicial
-document.getElementById('gifContainer').style.display = 'block';
+"use strict";
 
-document.getElementById('siBtn').addEventListener('click', function() {
-    // Ocultar el gif triste y mostrar el gif feliz
-    document.getElementById('sadGifContainer').style.display = 'none';
-    document.getElementById('sadGifContainer1').style.display = 'none';
-    document.getElementById('sadGifContainer2').style.display = 'none';
-    document.getElementById('gifContainer').style.display = 'none';
-    document.getElementById('happyGifContainer').style.display = 'block';
-
-    // Ocultar los botones "Pregunta Sí" y "No "
-    document.getElementById('question').style.display = 'none';
-    document.getElementById('siBtn').style.display = 'none';
-    document.body.classList.add('bg-green');
-    document.getElementById('noBtn').style.display = 'none';
-
-    // Mostrar el mensaje específico
-    document.getElementById('messageContainer').style.display = 'block';
-    document.getElementById('messageContainer').innerHTML = 'te amo hermosa 💕';
-
-    // Mostrar otro gif después de 3 segundos
-    setTimeout(function() {
-        document.getElementById('happyGifContainer').style.display = 'none';
-        document.getElementById('happyGifContainer2').style.display = 'block';
-    }, 1000);
-
-    setTimeout(function() {
-        document.getElementById('happyGifContainer2').style.display = 'none';
-        document.getElementById('happyGifContainer3').style.display = 'block';
-    }, 2000);
-    setTimeout(function() {
-        document.getElementById('happyGifContainer3').style.display = 'none';
-        document.getElementById('happyGifContainer4').style.display = 'block';
-    }, 3000);
-  
-});
-
-
-document.getElementById('noBtn').addEventListener('click', function() {
-    switch (noButtonState) {
-        case 0:
-            // Primera vez haciendo clic en "No"
-            document.getElementById('happyGifContainer').style.display = 'none';
-            document.getElementById('gifContainer').style.display = 'none';
-            document.getElementById('sadGifContainer').style.display = 'block';
-
-            // Modificar el botón "No"
-            document.getElementById('noBtn').innerHTML = '¡Oh no! ¿Estás segura?';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-          
-            
-            document.getElementById('siBtn').style.fontSize = '40px';
-            document.getElementById('siBtn').style.padding = '20px 40px';
-       
-            
-           
-
-        
-            noButtonClickCount++;
-            noButtonState++;
-            break;
-
-        case 1:
-            // Segunda vez haciendo clic en "No"
-
-            document.getElementById('noBtn').innerHTML = '¡¿Realmente estas segura?!';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-            document.getElementById('sadGifContainer').style.display = 'none';
-            document.getElementById('sadGifContainer2').style.display = 'block';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '50px';
-            document.getElementById('siBtn').style.padding = '30px 50px';
-        
-            noButtonState++;
-            break;
-
-        case 2:
-           
-            document.getElementById('noBtn').innerHTML = 'Estás segura de verdad, ¿eh?';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-            document.getElementById('sadGifContainer').style.display = 'none';
-            document.getElementById('sadGifContainer2').style.display = 'none';
-            document.getElementById('sadGifContainer1').style.display = 'block';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '60px';
-            document.getElementById('siBtn').style.padding = '40px 60px';
-        
-            noButtonState++;
-            break;
-        
-        case 3:
-           
-            document.getElementById('noBtn').innerHTML = '¿Eres positva?';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '70px';
-            document.getElementById('siBtn').style.padding = '50px 70px';
-        
-            noButtonState++;
-            break;
-        case 4:
-           
-            document.getElementById('noBtn').innerHTML = 'Di que si por favor?';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '80px';
-            document.getElementById('siBtn').style.padding = '60px 80px';
-         
-            noButtonState++;
-            break;
-        case 5:
-           
-            document.getElementById('noBtn').innerHTML = 'Solo piensalo un momento';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '90px';
-            document.getElementById('siBtn').style.padding = '70px 90px';
-
-            noButtonState++;
-            break;
-        case 6:
-           
-            document.getElementById('noBtn').innerHTML = 'Si, dices que no estaré muy triste';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '100px';
-            document.getElementById('siBtn').style.padding = '80px 100px';
-            
-            noButtonState++;
-            break;
-        case 7:
-           
-            document.getElementById('noBtn').innerHTML = 'Estaré muy triste';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '120px';
-            document.getElementById('siBtn').style.padding = '90px 120px';
-  
-            noButtonState++;
-            break;
-        case 8:
-           
-            document.getElementById('noBtn').innerHTML = 'Estaré muy muy muy triste';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            document.getElementById('siBtn').style.fontSize = '140px';
-            document.getElementById('siBtn').style.padding = '100px 140px';
-       
-            noButtonState++;
-            break;
-
-        case 9:
-           
-            document.getElementById('noBtn').innerHTML = 'Estaré muy muy muy muy triste.';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '160px';
-            document.getElementById('siBtn').style.padding = '110px 160px';
-          
-            noButtonState++;
-            break;
-
-        case 10:
-           
-            document.getElementById('noBtn').innerHTML = 'Vale, ya dejaré de preguntar...';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-         
-            document.getElementById('siBtn').style.fontSize = '180px';
-            document.getElementById('siBtn').style.padding = '120px 180px';
-    
-            noButtonState++;
-            break;
-        case 11:
-           
-            document.getElementById('noBtn').innerHTML = 'Es broma, POR FAVOR DI SÍ';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            document.getElementById('siBtn').style.fontSize = '200px';
-            document.getElementById('siBtn').style.padding = '130px 200px';
-            
-            noButtonState++;
-            break;
-        
-        case 12:
-           
-            document.getElementById('noBtn').innerHTML = 'Estaré muy muy muy muy muy triste.';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '220px';
-            document.getElementById('siBtn').style.padding = '140px 220px';
-    
-            noButtonState++;
-            break;
-        
-        case 13:
-           
-            document.getElementById('noBtn').innerHTML = 'Estás rompiendo mi corazón :(';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            document.getElementById('siBtn').style.fontSize = '240px';
-            document.getElementById('siBtn').style.padding = '150px 240px';
-         
-            noButtonState++;
-            break;
-        
-        case 14:
-           
-            document.getElementById('noBtn').innerHTML = 'NO... ya di que si';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '260px';
-            document.getElementById('siBtn').style.padding = '160px 260px';
-            
-            noButtonState++;
-            break;
-        
-        case 15:
-           
-            document.getElementById('noBtn').innerHTML = 'Anda Siiiiiiiiiiiiiiiiiiiiiiiiiii';
-            document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-
-            // Hacer que el botón "Sí" crezca
-            document.getElementById('siBtn').style.fontSize = '280px';
-            document.getElementById('siBtn').style.padding = '170px 280px';
-          
-            noButtonState++;
-            break;
-        
-     
-        case 16:
-                document.getElementById('noBtn').innerHTML = 'por favooooooor';
-                document.getElementById('noBtn').style.backgroundColor = '#F1330A';
-              
-                document.getElementById('sadGifContainer').style.display = 'none';
-                document.getElementById('sadGifContainer1').style.display = 'none';
-                document.getElementById('sadGifContainer2').style.display = 'none';
-                document.getElementById('gifContainer').style.display = 'block';
-                document.getElementById('happyGifContainer').style.display = 'none';
-                // Vuelve al estado 0
-                noButtonState = 0;
-                break;
-        
-
-        default:
-            // Por si acaso, maneja cualquier otro caso aquí
-            break;
-    }
-});
-
-
+!(function () {
+  function t() {
+    !(function () {
+      var t, g;
+      if (
+        ((o = l / 2),
+        (a = s / 2),
+        (n = c.create()),
+        (e = n.world),
+        (r = d.create({
+          element: document.body,
+          engine: n,
+          options: {
+            width: l,
+            height: s,
+            wireframes: !1,
+            background: "transparent",
+            pixelRatio: 1
+          }
+        })),
+        (i = u.create()),
+        u.run(i, n),
+        (n.gravity.scale = 0),
+        (n.gravity.x = 0),
+        (n.gravity.y = 0),
+        "undefined" != typeof fetch)
+      ) {
+        (t = function (t, e) {
+          return Array.prototype.slice.call(t.querySelectorAll(e));
+        }),
+          (g = function (t) {
+            return fetch(t)
+              .then(function (t) {
+                return t.text();
+              })
+              .then(function (t) {
+                return new window.DOMParser().parseFromString(
+                  t,
+                  "image/svg+xml"
+                );
+              });
+          })(svg_terrain).then(function (n) {
+            var r = t(n, "path"),
+              i = r.map(function (t) {
+                return v.pathToVertices(t, 30);
+              }),
+              l = y.fromVertices(
+                256,
+                200,
+                i,
+                {
+                  isStatic: !0,
+                  render: {
+                    fillStyle: "transparent",
+                    strokeStyle: "transparent",
+                    lineWidth: 1
+                  }
+                },
+                !0
+              );
+            h.add(e, l), (o = l.position.x), (a = l.position.y);
+          });
+        let n = null,
+          r = null;
+        g(svg_heart).then(function (e) {
+          n ||
+            ((r = t(e, "path").map(function (t) {
+              return v.pathToVertices(t, 50);
+            })),
+            (n = y.fromVertices(
+              o,
+              1.5 * a,
+              r,
+              {
+                restitution: 0,
+                friction: 0,
+                frictionStatic: 0,
+                frictionAir: 0,
+                mass: 20,
+                render: {
+                  lineWidth: 2
+                }
+              },
+              !0
+            )),
+            M.scale(n, 0.2, 0.2));
+        });
+        let i = function () {
+          let t = structuredClone(n);
+          (t.id = f.nextId()),
+            (t.position.x = o),
+            (t.position.y = 1.5 * a),
+            S.push(S.shift());
+          let r = S[0];
+          (t.render.fillStyle = r),
+            (t.render.strokeStyle = r),
+            t.parts.forEach(function (e, n) {
+              (t.parts[n].render.fillStyle = r),
+                (t.parts[n].render.strokeStyle = r);
+            }),
+            M.setAngle(t, Math.round(360 * Math.random()), !1),
+            M.setVelocity(t, {
+              x: f.random(-5, 5),
+              y: f.random(-5, -1)
+            }),
+            h.add(e, t);
+        };
+        setTimeout(function () {
+          let t = 0,
+            e = setInterval(() => {
+              i(), 2 == t && (clearInterval(e), (n = null), (r = null)), t++;
+            }, 780);
+        }, 220);
+      } else f.warn("Fetch is not available. Could not load SVG.");
+      let k = m.create(r.canvas),
+        x = p.create(n, {
+          mouse: k,
+          constraint: {
+            stiffness: 0.2,
+            render: {
+              visible: !1
+            }
+          }
+        });
+      h.add(e, x),
+        (r.mouse = k),
+        d.lookAt(r, {
+          min: {
+            x: 0,
+            y: 0
+          },
+          max: {
+            x: l,
+            y: s
+          }
+        }),
+        d.run(r);
+    })();
+  }
+  let e,
+    n,
+    r,
+    i,
+    o,
+    a,
+    l = 512,
+    s = 512,
+    c = (Matter.World, Matter.Engine),
+    d = Matter.Render,
+    u = Matter.Runner,
+    f = (Matter.Composites, Matter.Common),
+    p = Matter.MouseConstraint,
+    m = Matter.Mouse,
+    h = Matter.Composite,
+    y = (Matter.Vertices, Matter.Bodies),
+    M = Matter.Body,
+    v = (Matter.Events, Matter.Query, Matter.Svg),
+    g = [
+      "pink",
+      "deeppink",
+      "deeppink",
+      "hotpink",
+      "hotpink",
+      "lightpink",
+      "magenta",
+      "orchid"
+    ],
+    S = ["mediumvioletred", "crimson", "salmon"];
+  (window.onload = () => {
+    t();
+  }),
+    setTimeout(function () {
+      let t = 0,
+        n = setInterval(() => {
+          !(function () {
+            let t = f.choose(g);
+            const n = y.circle(o, a, 25, {
+              restitution: 0,
+              friction: 0,
+              frictionStatic: 0,
+              frictionAir: 0,
+              mass: 10,
+              render: {
+                fillStyle: t,
+                strokeStyle: t,
+                lineWidth: 0
+              }
+            });
+            M.setVelocity(n, {
+              x: f.random(-1, 1),
+              y: f.random(-1, 1)
+            }),
+              h.add(e, n);
+          })(),
+            60 == t && clearInterval(n),
+            t++;
+        }, 100);
+    }, 2e3);
+})();
